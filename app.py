@@ -11,7 +11,7 @@ from flask import render_template
 app = Flask(__name__)
 
 
-@app.route('/<user>', defaults={'user': None})
+@app.route('/')
 #@app.route('/')
 def index(user = None):
     user_agent = request.headers.get('User-Agent')
