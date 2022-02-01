@@ -1,4 +1,7 @@
-{% import 'macros.html' as macros %}
+{% extends "base.html" %} {% import 'macros.html' as macros %} {% block title
+%}Index{% endblock %} {% block head %} {{ super() }}
+<style></style>
+{% endblock %} {% block body %}
 <h1>Hello World!</h1>
 {{ macros.show_user(user) }}
 <p>Your browser is: {{ user_agent }}.</p>
@@ -9,3 +12,4 @@
   <li>{{ comment }}</li>
   {% endfor %}
 </ul>
+{% endblock %}
