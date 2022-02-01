@@ -11,12 +11,13 @@ from flask import render_template
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
+@app.route('/<user>', defaults={'user': None})
+#@app.route('/')
+def index(user = None):
     user_agent = request.headers.get('User-Agent')
     app_name = current_app.name
     
-    return render_template('index.html', user_agent=user_agent, app_name=app_name)
+    return render_template('index.html', user_agent=user_agent, app_name=app_name, user=user)
 
 
 @app.route('/user/<name>')

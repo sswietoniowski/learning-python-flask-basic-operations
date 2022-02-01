@@ -1,4 +1,9 @@
 <h1>Hello World!</h1>
+{% if user %}
+<p>Hello {{ user }}!</p>
+{% else %}
+<p>Hello unknown!</p>
+{% endif %}
 <p>Your browser is: {{ user_agent }}.</p>
-<p>Your app is: {{ app_name }}.</p>
+<p>Your app is: {{ app_name|upper }}.</p>
 <p>This document carries a cookie!</p>
